@@ -1,8 +1,8 @@
-# this program takes fermi data as outputted by fv, and converts it into a 2D array of values:
+# this program takes fermi data as outputted by fv, and converts it into a 2D array of values
 # the 2D array consists of a list of lists, each containing E(MeV), RA, and DEC
 # the data may then be outputted via xls or to plaintext
 # this should make it easier to work with this data in Python (astropy) and JS (astrojs)
-#
+# this program only deals with 100,000 values (33,333 events) per run cycle
 
 # !!!!!MAKE SURE TO CREATE FILES NAMED EITHER fermix.xls OR fermit.txt BEFORE RUNNING!!!!!! 
 
