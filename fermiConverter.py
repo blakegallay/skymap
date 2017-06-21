@@ -67,8 +67,6 @@ class fermiConverter():
             col2_name = 'RA'
             col3_name = 'DEC'
 
-            #You may need to group the variables together
-            #for n, (v_desc, v) in enumerate(zip(desc, variables)):
             
             notation = int(input("enter 1 for scientific notation\nenter 2 for decimal notation"))
             
