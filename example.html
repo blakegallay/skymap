@@ -211,11 +211,17 @@ var types = {
 };
 
 astrojs.ready(function(e){
-
+  var fermi = [
+  	{dec: 74.6459, ra: 14.039, err: 1, type: types.shower},
+  	{dec: 37.47, ra: 225.437, err: 1, type: types.shower},
+  	{dec: 29.788, ra: 205.89, err: 1, type: types.shower},
+  	{dec: 31.1, ra: 102.6831, err: 1, type: types.shower}
+  
+  ];
   var hese = [
-    {dec: -1.8, ra: 35.2, err: 16.3, type: types.shower},
-    {dec: -28.0, ra: 282.6, err: 25.4, type: types.shower},
-    {dec: -31.2, ra: 127.9, err: 1.4, type: types.track}
+    {dec: -19.2, ra: 35.2, err: 16.3, type: types.shower},
+    {dec: 0, ra: 50, err: 20, type: types.shower},
+    {dec: -20, ra: 127.9, err: 1.4, type: types.shower}
   ];
 
   // make a canvas
@@ -302,6 +308,33 @@ astrojs.ready(function(e){
         wrap: true
       });
   }
+  for (var u=0;u<fermi.length;u++) {
+    mydraw.circle({
+      coords: [fermi[u].ra, fermi[u].dec],
+      radius: 6,
+      fill: true,
+      stroke: false,
+      fillStyle: "green",
+      raw: true
+    })
+    if (fermi[u].type != undefined && fermi[u].type != null) {
+      fermi[u].type(mydraw, project([fermi[u].ra, fermi[u].dec]), 6);
+    }
+    mydraw.text({
+      coords: [fermi[u].ra, fermi[u].dec],
+      font: "16px sans-serif",
+      text: ""+(u+1)
+    });
+    if (fermi[u].err > 6)
+      mydraw.circle({
+        coords: [fermi[u].ra, fermi[u].dec],
+        radius: fermi[u].err,
+        strokeStyle: "green",
+        wrap: true
+      });
+  }
+  
+  
 });
 </script>
 </body>
