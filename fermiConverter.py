@@ -4,7 +4,7 @@
 # this should make it easier to work with this data in Python (astropy) and JS (astrojs)
 # this program only deals with 100,000 values (33,333 events) per run cycle
 
-# !!!!!MAKE SURE TO CREATE FILES NAMED EITHER fermix.xls OR fermit.txt BEFORE RUNNING!!!!!! 
+# !!!!!MAKE SURE TO CREATE FILES NAMED EITHER fermix.xls OR fermit.txt BEFORE RUNNING!!!!!
 
 
 import xlwt
